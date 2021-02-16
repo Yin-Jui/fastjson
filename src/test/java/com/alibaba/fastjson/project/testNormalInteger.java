@@ -15,7 +15,6 @@ public class testNormalInteger{
 		Assert.assertEquals(str,expected);
 	}
 
-	
 	public static class SomeInteger{
 			
 			
