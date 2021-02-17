@@ -22,7 +22,7 @@ import java.util.Arrays;
  */
 public class Labels {
 
-    private static class DefaultLabelFilter implements LabelFilter {
+    public static class DefaultLabelFilter implements LabelFilter {
 
         private String[] includes;
         private String[] excludes;
