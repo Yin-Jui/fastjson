@@ -291,7 +291,8 @@ public class DefaultJSONParser implements Closeable {
                         throw new JSONException("object key level > 512");
                     }
                     lexer.nextToken();
-                    key = parse();
+                    key =
+                            parse();
                     isObjectKey = true;
                 } else {
                     if (!lexer.isEnabled(Feature.AllowUnQuotedFieldNames)) {
