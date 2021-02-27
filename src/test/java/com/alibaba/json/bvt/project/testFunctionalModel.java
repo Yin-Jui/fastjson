@@ -1,4 +1,4 @@
-package com.alibaba.fastjson.project;
+package com.alibaba.json.bvt.project;
 import com.alibaba.fastjson.parser.DefaultJSONParser;
 import com.alibaba.fastjson.parser.ParserConfig;
 import com.alibaba.fastjson.serializer.*;
@@ -18,6 +18,8 @@ public class testFunctionalModel {
     public void test1() {
 
         String expected = "{\"price\":4.99,\"title\":\"The Book Theif\"}";
+        Book book = new Book(4.99, "The Book Theif");
+
         String JSONinput = "{\"price\":4.99,\"title\":\"The Book Theif\"}";
 
         /*
@@ -26,21 +28,31 @@ public class testFunctionalModel {
         configuration in parse method. Finally pass the string with those features to DefaultJSONParser.
         */
         DefaultJSONParser parser = new DefaultJSONParser(JSONinput, ParserConfig.getGlobalInstance(), JSON.DEFAULT_PARSER_FEATURE);
+
         Object value = parser.parse();
+
+        System.out.println(value.getClass().getName());
 
         parser.handleResovleTask(value);
 
+        System.out.println(value.getClass().getName());
+
         parser.close();
+
+        System.out.println(JSON.parseObject(JSONinput, Book.class));
+
 
         Assert.assertEquals(value.toString(), expected);
 
     }
+
 //test the transition from Object to Json string
     @Test
     public void test2() {
 
         Book book = new Book(4.99, "The Book Theif");
         String expected = "{\"price\":4.99,\"title\":\"The Book Theif\"}";
+
 
         Assert.assertEquals(JSON.toJSONString(book), expected);
     }

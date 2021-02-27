@@ -1,4 +1,4 @@
-package com.alibaba.fastjson.project;
+package com.alibaba.json.bvt.project;
 
 import com.alibaba.fastjson.serializer.SerializeWriter;
 
@@ -19,7 +19,7 @@ public class WriteStringWithDoubleQuoteTest {
 		writer.writeStringWithDoubleQuote(chars,'a');
 		Assert.assertEquals(writer.toString(),"\""+str+"\"a");
 	}
-	
+
 	@Test
 	public void test2() {
 		

@@ -1,27 +1,26 @@
-package com.alibaba.fastjson.project;
+package com.alibaba.json.bvt.project;
 
 
 import org.junit.*;
 import com.alibaba.fastjson.JSON;
 
-public class testIntegerOutOfRange{
+public class testNormalInteger{
 	
 	@Test
 	public void test() {
 		
-		BigInteger bigint = new BigInteger((int)Math.pow(2, 35));
+		SomeInteger bigint = new SomeInteger(75892);
 		String str = JSON.toJSONString(bigint);
-		String expected = "{\"value\":2147483647}";
+		String expected = "{\"value\":75892}";
 		Assert.assertEquals(str,expected);
 	}
 
-	
-	public static class BigInteger{
+	public static class SomeInteger{
 			
 			
 			private int value;
 			
-			public BigInteger(int value) {
+			public SomeInteger(int value) {
 				this.value = value;
 			}
 			

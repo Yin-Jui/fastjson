@@ -1,5 +1,5 @@
 
-package com.alibaba.fastjson.project;
+package com.alibaba.json.bvt.project;
 
 import org.junit.*;
 import com.alibaba.fastjson.JSON;
