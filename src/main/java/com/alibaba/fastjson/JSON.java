@@ -375,7 +375,7 @@ public abstract class JSON implements JSONStreamAware, JSONAware {
                 featureValues |= feature.mask;
             }
         }
-
+        
         DefaultJSONParser parser = new DefaultJSONParser(input, config, featureValues);
 
         if (processor != null) {
