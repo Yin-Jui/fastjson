@@ -260,6 +260,7 @@
                     throw new JSONException("can not cast to JSONObject.", e);
                 }
             }
+<<<<<<< HEAD
 
             /**
              * <pre>
@@ -276,6 +277,11 @@
             public static <T> T parseObject(String text, TypeReference<T> type, Feature... features) {
                 return (T) parseObject(text, type.type, ParserConfig.global, DEFAULT_PARSER_FEATURE, features);
             }
+=======
+        }
+        
+        DefaultJSONParser parser = new DefaultJSONParser(input, config, featureValues);
+>>>>>>> 13079345f7ba071ae274b75e1711b4cdf4185c92
 
             /**
              * This method deserializes the specified Json into an object of the specified class. It is not
