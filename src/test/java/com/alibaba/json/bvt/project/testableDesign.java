@@ -1,4 +1,5 @@
 package com.alibaba.json.bvt.project;
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.parser.DefaultJSONParser;
 import com.alibaba.fastjson.parser.Feature;
 import com.alibaba.fastjson.parser.ParserConfig;
@@ -24,9 +25,9 @@ public class testableDesign {
         customizedFeature |= Feature.IgnoreNotMatch.getMask();
 
         DefaultJSONParser customizedParser = new DefaultJSONParser(JSONinput, ParserConfig.getGlobalInstance(), customizedFeature);
-
-        Object ob = testableParse(customizedParser);
+        Object ob = JSON.parseObject(JSONinput);
         int index = 0;
+        
         for(Field f: ob.getClass().getFields()){
             try {
                 Object o = f.get(ob);
@@ -43,9 +44,8 @@ public class testableDesign {
 
 //testable method
     public static Object testableParse(DefaultJSONParser stub) {
-
-        Object value = stub.parse();
-        stub.handleResovleTask(value);
+        Object value = stub.parseObject(Book.class, null);
+        //stub.handleResovleTask(value);
         stub.close();
         return value;
     }
