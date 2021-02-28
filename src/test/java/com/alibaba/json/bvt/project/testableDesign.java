@@ -25,13 +25,11 @@ public class testableDesign {
         customizedFeature |= Feature.IgnoreNotMatch.getMask();
 
         DefaultJSONParser customizedParser = new DefaultJSONParser(JSONinput, ParserConfig.getGlobalInstance(), customizedFeature);
-        Object ob = JSON.parseObject(JSONinput);
+        Object ob = testableParse(customizedParser);
         int index = 0;
-        
         for(Field f: ob.getClass().getFields()){
             try {
                 Object o = f.get(ob);
-                System.out.println(o.toString());
                 if(index == 0) Assert.assertEquals(o.toString(), "4.99");
                 if(index == 1) Assert.assertEquals(o.toString(), "The Book Theif");
 
@@ -45,7 +43,7 @@ public class testableDesign {
 //testable method
     public static Object testableParse(DefaultJSONParser stub) {
         Object value = stub.parseObject(Book.class, null);
-        //stub.handleResovleTask(value);
+        stub.handleResovleTask(value);
         stub.close();
         return value;
     }
