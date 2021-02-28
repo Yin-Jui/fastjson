@@ -28,20 +28,12 @@ public class testFunctionalModel {
         configuration in parse method. Finally pass the string with those features to DefaultJSONParser.
         */
         DefaultJSONParser parser = new DefaultJSONParser(JSONinput, ParserConfig.getGlobalInstance(), JSON.DEFAULT_PARSER_FEATURE);
-
         Object value = parser.parse();
-
         System.out.println(value.getClass().getName());
-
         parser.handleResovleTask(value);
-
         System.out.println(value.getClass().getName());
-
         parser.close();
-
         System.out.println(JSON.parseObject(JSONinput, Book.class));
-
-
         Assert.assertEquals(value.toString(), expected);
 
     }
