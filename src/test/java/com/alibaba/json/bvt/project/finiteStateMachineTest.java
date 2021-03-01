@@ -1,4 +1,4 @@
-package com.alibaba.fastjson.project;
+package com.alibaba.json.bvt.project;
 
 import com.alibaba.fastjson.serializer.SerializeWriter;
 import com.alibaba.fastjson.serializer.JSONSerializer;

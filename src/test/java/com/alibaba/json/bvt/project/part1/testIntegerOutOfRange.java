@@ -1,4 +1,4 @@
-package com.alibaba.json.bvt.project;
+package com.alibaba.json.bvt.project.part1;
 
 
 import org.junit.*;

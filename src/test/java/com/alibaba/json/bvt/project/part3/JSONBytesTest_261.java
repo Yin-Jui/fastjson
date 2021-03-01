@@ -1,4 +1,4 @@
-package com.alibaba.json.bvt.project;
+package com.alibaba.json.bvt.project.part3;
 
 import java.nio.charset.Charset;
 

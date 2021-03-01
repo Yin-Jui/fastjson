@@ -1,4 +1,4 @@
-package com.alibaba.json.bvt.project;
+package com.alibaba.json.bvt.project.part5;
 import java.lang.reflect.Field;
 import java.lang.reflect.Type;
 

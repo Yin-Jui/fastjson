@@ -1,4 +1,4 @@
-package com.alibaba.json.bvt.project;
+package com.alibaba.json.bvt.project.part5;
 import com.alibaba.fastjson.parser.DefaultJSONParser;
 import com.alibaba.fastjson.parser.Feature;
 import com.alibaba.fastjson.parser.ParserConfig;
